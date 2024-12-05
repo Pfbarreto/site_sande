@@ -1,0 +1,305 @@
+@font-face {
+    font-family: 'Mansory';
+    src: url('Mansory.tts') format('truetype'), url('Mansory.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --letra: rgb(255, 255, 255);
+    --letra-principal: rgb(193, 178, 162);
+    --cor-do-titulo: rgb(46, 46, 46);
+    --cor-fundo: #A0826D;
+    --cor-fundo-secudario: #F1ECE2;
+    --cor-backgroud-button: rgb(125, 84, 0);
+    --cor-backgroud-button-secundario: rgb(78, 173, 51);
+    --cor-de-uso-2: rgb(72, 255, 0);
+    --cor-de-uso: rgb(77, 71, 71);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mansory';
+}
+
+body {
+    font-size: 1em;
+    overflow-x: hidden; /* Impede rolagem lateral */
+}
+
+.principal {
+    background-image: linear-gradient(to bottom, var(--cor-fundo), var(--letra-principal));
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 320px;
+    max-width: 100%;
+    min-width: 320px;
+    max-height: 100%;
+}
+
+.titulo__principal {
+    padding: 2em;
+    color: var(--cor-do-titulo);
+    font-size: 32px;
+}
+
+.texto {
+    color: var(--cor-de-uso);
+    font-size: 24px;
+    padding: 0 5em 1em 2em ;
+}
+.titulo__secudario{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: 32px;
+    color: var(--cor-do-titulo);
+}
+.button__secundario {
+    text-decoration: none;
+    padding: 0.5em 3em;
+    margin: 0 0 0;
+    size: 1em;
+    background-color:var(--cor-backgroud-button-secundario) ;
+    border-radius: 20px;
+    color: var(--letra);
+    transition: all 0.3s ease;
+    font-size: 24px;
+
+}
+.margem{
+    margin: 1em;
+}
+.button__secundario:hover{
+    background-color: var(--cor-de-uso-2);
+
+}
+
+.buttom {
+    text-decoration: none;
+    padding: 1em;
+    margin: 1em;
+    background-color: var(--cor-backgroud-button);
+    border-radius: 20px;
+    color: var(--letra);
+    transition: all 0.3s ease;
+}
+
+.buttom:hover {
+    background-color: transparent;
+    color: var(--cor-de-uso);
+    border: 2px solid;
+}
+
+.imagem__proficional {
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 50%;
+    min-height: 50% ;
+}
+
+.slider {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--cor-fundo);
+}
+
+.slider-track {
+    display: flex;
+    animation: slide 15s linear infinite;
+}
+
+.slider-track img {
+    height: auto;
+    width: 20%; /* Reduz o tamanho da imagem proporcionalmente */
+    margin: 0% 1%; /* Espaçamento entre imagens */
+    flex-shrink: 0; /* Garante que todas as imagens mantenham seu tamanho */
+}
+.secundario{
+    background-color: var(--cor-fundo-secudario);
+}
+.links{
+    margin: 0%;
+    padding-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    position: relative;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+}
+ul li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    margin: 0 30px;
+    transform: rotate(-30deg) skew(25deg);
+    background: var(--cor-destaque);
+
+}
+ul li span{
+    display: flex !important;
+    font-size: 24px;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--cor-escura);
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-destaque);
+    font-size: 30px !important;
+    transition: 0.5s;
+}
+ul li:hover span{
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+ul li:hover span:nth-child(5){
+    transform: translate(40px,-40px);
+    opacity: 1;
+}
+ul li:hover span:nth-child(4){
+    transform: translate(30px,-30px);
+    opacity: 0.8;
+
+}
+ul li:hover span:nth-child(3){
+    transform: translate(20px, -20px);
+    opacity: 0.6;
+}
+ul li:hover span:nth-child(2){
+    transform: translate(10px, -10px);
+    opacity: 0.4;
+}
+ul li:hover span:nth-child(1){
+    transform: translate(0px, 0px);
+    opacity: 0.2;
+}
+ul li:nth-child(1) span{
+    background: var(--cor-face);
+}
+ul li:nth-child(2) span{
+    background:var(--cor-google) ;
+}
+ul li:nth-child(3) span{
+    background: var(--cor-instagram);
+}
+ul li:nth-child(4) span{
+    background: var(--cor-linkedin);
+}
+ul li:nth-child(5) span{
+    background: var(--cor-twitter);
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 2s;
+    transform: translateY(-100%);
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 2s;
+    transform: translateY(0);
+}
+
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.terceiro{
+    background-color: var(--cor-fundo);
+}
+
+.icone{
+    background-color: var(--cor-fundo-secudario);
+    margin: 1em;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 14px;
+}
+.texto_icon{
+    color: var(--cor-de-uso);
+}
+.icone_tamanho{
+    height: 32px;
+    color: var(--cor-de-uso);
+}
+
+.caixa :nth-child(2){
+    transition-delay: 400ms;
+}
+.caixa :nth-child(3){
+    transition-delay: 700ms;
+}
+.caixa :nth-child(4){
+    transition-delay: 1000ms;
+}
+
+
+.centralizar{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.produto{
+    padding: 0.5em;
+    background-color: var(--cor-fundo-secudario);
+    border-radius: 20px;
+}
+.imagem__proficional_dois{
+    min-width: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 50%;
+}
+
+.distanciamento{
+    margin-top: 1em;
+}
+.fa{
+    color: var(--cor-fundo);
+}
+.rodape{
+    color: var(--cor-fundo);
+    height: 4vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) { 
+    .container{
+        flex-direction: column;
+
+    }
+    .caixa{
+        flex-direction: column;
+    }
+    
+}
